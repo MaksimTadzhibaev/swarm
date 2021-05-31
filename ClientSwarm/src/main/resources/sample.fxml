@@ -1,0 +1,37 @@
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<VBox fx:controller="Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" stylesheets="styles.css">
+    <VBox layoutX="530" layoutY="100" spacing="6" alignment="CENTER">
+        <TextField promptText="Enter your login..." prefWidth="230" layoutY="50" prefHeight="30" fx:id="loginField"></TextField>
+        <PasswordField promptText="Enter password..." prefWidth="230" prefHeight="30" fx:id="passwordField"></PasswordField>
+    </VBox>
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Exit" onAction="#btnExitProgram"> <!-- Выход по кнопке exit  -->
+            </MenuItem>
+        </Menu>
+    </MenuBar>
+
+        <HBox VBox.vgrow="ALWAYS">
+            <fx:include fx:id="clientPanel" source="panel.fxml" HBox.hgrow="ALWAYS"/>
+            <fx:include fx:id="serverPanel" source="panel.fxml" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox spacing="5">
+            <Button maxWidth="Infinity" focusTraversable="false" text="Copy" HBox.hgrow="ALWAYS" onAction="#btnCopyFile"/>
+            <Button maxWidth="Infinity" focusTraversable="false" text="Paste" HBox.hgrow="ALWAYS"/>
+            <Button maxWidth="Infinity" focusTraversable="false" text="Move" HBox.hgrow="ALWAYS"/>
+            <Button maxWidth="Infinity" focusTraversable="false" text="Delete" HBox.hgrow="ALWAYS"/>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top = "5.0"/>
+            </padding>
+        </HBox>
+</VBox>
